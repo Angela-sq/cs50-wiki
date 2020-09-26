@@ -20,8 +20,8 @@ def index(request):
 
 def entry_page(request, title):
     entry_contents = util.get_entry(title)
-    # html_entry_contents = markdown_to_html(entry_contents) if entry_contents else None
-    html_entry_contents = entry_contents
+    html_entry_contents = markdown_to_html(entry_contents) if entry_contents else None
+    # html_entry_contents = entry_contents
 
     return render(request, "encyclopedia/entry.html", {
         "body_content": html_entry_contents,
